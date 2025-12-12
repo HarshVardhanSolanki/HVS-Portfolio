@@ -8,12 +8,16 @@ import { Contact } from './components/Contact';
 import { updateFromLinkedIn } from './services/linkedinService';
 import { LinkedInProfile } from './types';
 import { Loader2 } from 'lucide-react';
+import { inject } from '@vercel/analytics';
 
 const App: React.FC = () => {
   const [profileData, setProfileData] = useState<LinkedInProfile | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Initialize Vercel Web Analytics
+    inject();
+
     // Simulate the data fetching on mount
     const fetchData = async () => {
       try {
