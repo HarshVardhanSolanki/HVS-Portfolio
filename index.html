@@ -1,45 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh's Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harsh Vardhan Solanki | Data Science Portfolio</title>
+    <meta name="description" content="Portfolio of Harsh Vardhan Solanki, Data Science Student and OCI Enthusiast." />
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              background: '#0f172a', // Slate 900
+              surface: '#1e293b', // Slate 800
+              primary: '#22d3ee', // Cyan 400
+              secondary: '#06b6d4', // Cyan 500
+              accent: '#f472b6', // Pink 400 (for subtle contrast)
+              text: '#f8fafc', // Slate 50
+              muted: '#94a3b8', // Slate 400
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              glow: {
+                '0%': { boxShadow: '0 0 5px #22d3ee' },
+                '100%': { boxShadow: '0 0 20px #22d3ee, 0 0 10px #22d3ee' }
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f172a; /* Dark background */
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        h1 {
-            color: #22d3ee; /* Cyan accent */
-            font-size: 3rem;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-        }
-        .container {
-            border: 1px solid #334155;
-            padding: 40px;
-            border-radius: 12px;
-            background-color: #1e293b;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
+      body {
+        background-color: #0f172a;
+        color: #f8fafc;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #22d3ee;
+      }
     </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
 </head>
-<body>
-
-    <div class="container">
-        <h1>Hello, World!</h1>
-        <p>I am Harsh Vardhan Solanki.</p>
-        <p>This site is deployed via Netlify CLI.</p>
-    </div>
-
-</body>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
