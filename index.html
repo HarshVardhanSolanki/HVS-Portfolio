@@ -1,240 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harsh Vardhan Solanki | Data Science Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Portfolio of Harsh Vardhan Solanki, Data Science Student and OCI Enthusiast." />
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              background: '#0f172a', // Slate 900
+              surface: '#1e293b', // Slate 800
+              primary: '#22d3ee', // Cyan 400
+              secondary: '#06b6d4', // Cyan 500
+              accent: '#f472b6', // Pink 400 (for subtle contrast)
+              text: '#f8fafc', // Slate 50
+              muted: '#94a3b8', // Slate 400
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              glow: {
+                '0%': { boxShadow: '0 0 5px #22d3ee' },
+                '100%': { boxShadow: '0 0 20px #22d3ee, 0 0 10px #22d3ee' }
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
-        /* RESET & BASE STYLES */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #0f172a; /* Dark Slate Background */
-            color: white;
-            overflow-x: hidden;
-        }
-
-        /* UTILITY CLASSES FOR GRADIENTS */
-        .text-gradient {
-            background: linear-gradient(90deg, #22d3ee, #a855f7); /* Cyan to Purple */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .bg-gradient-mesh {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 15% 50%, rgba(34, 211, 238, 0.15), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.15), transparent 25%);
-        }
-
-        /* LAYOUT */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* HERO SECTION */
-        header {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: #94a3b8;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(90deg, #0ea5e9, #6366f1);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-            transition: transform 0.2s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #334155;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        /* CARDS (Projects/Skills) */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: rgba(30, 41, 59, 0.7); /* Glass effect */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #22d3ee;
-        }
-
-        .card h3 {
-            color: #22d3ee;
-            margin-bottom: 10px;
-            font-size: 1.25rem;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #334155;
-            color: #e2e8f0;
-            padding: 4px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            margin-top: 10px;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 1.1rem; }
-            .container { padding: 15px; }
-        }
+      body {
+        background-color: #0f172a;
+        color: #f8fafc;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #22d3ee;
+      }
     </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
 </head>
-<body>
-
-    <div class="bg-gradient-mesh"></div>
-
-    <div class="container">
-        
-        <header>
-            <p style="color: #22d3ee; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px;">Portfolio</p>
-            <h1 class="text-gradient">Harsh Vardhan Solanki</h1>
-            <h2>Data Science Student | OCI Enthusiast</h2>
-            <p style="max-width: 600px; margin: 0 auto 30px auto; color: #cbd5e1; line-height: 1.6;">
-                1st Year B.Tech Student at Bansal Institute (BIRT), RGPV. 
-                Building the future with AI, Oracle Cloud, and Python.
-            </p>
-            <div style="display: flex; gap: 15px; justify-content: center;">
-                <a href="https://linkedin.com/in/harshvsolanki" target="_blank" class="btn">LinkedIn</a>
-                <a href="mailto:harshpratapsinghhh@gmail.com" class="btn" style="background: #334155; box-shadow: none;">Email Me</a>
-            </div>
-        </header>
-
-        <section>
-            <div style="text-align: center;">
-                <h2 class="section-title">Technical Arsenal</h2>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>Data Science & AI</h3>
-                    <p style="color: #94a3b8;">Python, Pandas, NumPy. Learning to analyze complex datasets and build predictive models.</p>
-                </div>
-                <div class="card">
-                    <h3>Cloud Infrastructure</h3>
-                    <p style="color: #94a3b8;">Oracle Cloud Infrastructure (OCI), Compute Instances, Cloud Networking basics.</p>
-                </div>
-                <div class="card">
-                    <h3>Web Technologies</h3>
-                    <p style="color: #94a3b8;">HTML5, CSS3, Basic JavaScript, Git & GitHub for version control.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div style="text-align: center;">
-                <h2 class="section-title">Featured Projects</h2>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <h3>Image Enhancement Research</h3>
-                        <span style="font-size: 1.5rem;">📷</span>
-                    </div>
-                    <p style="color: #cbd5e1; margin: 10px 0;">
-                        Exploring programmatic ways to adjust clarity, exposure, and saturation for professional photo editing.
-                    </p>
-                    <div>
-                        <span class="tag">Python</span>
-                        <span class="tag">OpenCV</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <h3>RGPV Study Assistant</h3>
-                        <span style="font-size: 1.5rem;">📚</span>
-                    </div>
-                    <p style="color: #cbd5e1; margin: 10px 0;">
-                        Compiling resources and logic for Engineering Physics and Maths to help peers ace semester exams.
-                    </p>
-                    <div>
-                        <span class="tag">Education</span>
-                        <span class="tag">Research</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2025 Harsh Vardhan Solanki. All Rights Reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.6;">Bansal Institute of Research and Technology (BIRT)</p>
-        </footer>
-
-    </div>
-
-</body>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
