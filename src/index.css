@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Your custom styles and animations */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Dark background */
+body {
+  @apply min-h-screen bg-gradient-to-br from-slate-950 to-black text-white font-sans;
+}
