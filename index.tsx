@@ -347,7 +347,7 @@ const App = () => {
                 <div className="space-y-2 font-mono text-sm text-slate-400">
                   <p>> Importing knowledge...</p>
                   <p>> Training models...</p>
-                  <p className="text-primary">> Ready to deploy.</p>
+                  <p className="text-primary"> Ready to deploy.</p>
                 </div>
                 <div className="h-1 w-full bg-slate-700 rounded-full overflow-hidden">
                   <div className="h-full bg-primary w-2/3"></div>
