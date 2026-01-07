@@ -416,7 +416,7 @@ export default function App() {
           {/* ... */}
 
           <footer className="text-center py-10 text-slate-600 text-sm print:hidden">
-            <a href="https://global.showmelocal.com/39517474-harsh-vardhan-solanki-clothing-store-khurja" target="_blank"><img src="https://www.showmelocal.com/showmelocal-member-39517474" style="width:200px;" alt="Harsh Vardhan Solanki,Clothing Store,Khurja,Uttar Pradesh" /></a>
+            <a href="https://global.showmelocal.com/39517474-harsh-vardhan-solanki-clothing-store-khurja" target="_blank"><img src="https://www.showmelocal.com/showmelocal-member-39517474" style="width:200px;" alt="Harsh Vardhan Solanki,Clothing Store,Khurja,Uttar Pradesh"></a>
             <p>&copy; {new Date().getFullYear()} {PROFILE.name}. All rights Reserved.</p>
             <p className="mt-2 font-mono text-[10px] text-slate-700 tracking-widest">BUILT_WITH_REACT_AND_GEMINI_AI</p>
           </footer>
